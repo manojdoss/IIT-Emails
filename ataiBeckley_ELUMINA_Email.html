@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ataiBeckley ELUMINA Study — Next Steps</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #f0f0ec;
+      font-family: 'Source Sans 3', sans-serif;
+      color: #2c2c2c;
+    }
+
+    .email-wrapper {
+      max-width: 640px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+
+    /* HEADER */
+    .header {
+      background-color: #ffffff;
+      padding: 28px 40px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e8ede6;
+    }
+
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-text {
+      font-family: 'Lora', serif;
+      color: #1a1a1a;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .logo-text strong {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      color: #3b884c;
+      letter-spacing: 0.12em;
+      margin-top: 2px;
+    }
+
+    .header-tagline {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 11px;
+      color: #888;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    /* GREEN ACCENT BAR */
+    .accent-bar {
+      height: 4px;
+      background: linear-gradient(90deg, #3d8b3d 0%, #5cb85c 60%, #a8d5a2 100%);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background-color: #f7f9f5;
+      padding: 36px 40px 32px;
+      border-bottom: 1px solid #e8ede6;
+    }
+
+    .hero-label {
+      display: inline-block;
+      background-color: #3d8b3d;
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+
+    .study-badge {
+      display: inline-block;
+      background-color: #1a1a1a;
+      color: #a8d5a2;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 16px;
+      margin-left: 8px;
+    }
+
+    .hero h1 {
+      font-family: 'Lora', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: #1a1a1a;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+
+    .hero .subtitle {
+      font-size: 14px;
+      color: #777;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    /* BODY CONTENT */
+    .content {
+      padding: 36px 40px;
+    }
+
+    .greeting {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 15px;
+      color: #444;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .content p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    /* CTA BUTTON */
+    .cta-block {
+      margin: 28px 0;
+      text-align: center;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #3d8b3d;
+      color: #ffffff !important;
+      text-decoration: none;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 3px;
+    }
+
+    /* STEP CARDS */
+    .steps-block {
+      margin: 28px 0;
+    }
+
+    .steps-block h3 {
+      font-family: 'Lora', serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+    }
+
+    .step-card {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      background-color: #f7f9f5;
+      border-left: 3px solid #5cb85c;
+      border-radius: 0 4px 4px 0;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+
+    .step-number {
+      background-color: #3d8b3d;
+      color: #ffffff;
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      font-weight: 600;
+      min-width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .step-content a {
+      color: #3d8b3d;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* DOCUMENT CALLOUT */
+    .doc-callout {
+      background-color: #1a1a1a;
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin: 28px 0;
+    }
+
+    .doc-callout .doc-label {
+      display: inline-block;
+      background-color: #5cb85c;
+      color: #ffffff;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 2px;
+      margin-bottom: 14px;
+    }
+
+    .doc-callout h3 {
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .doc-callout p {
+      color: #cccccc;
+      font-size: 14px;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .doc-callout ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 14px;
+    }
+
+    .doc-callout ul li {
+      color: #cccccc;
+      font-size: 13px;
+      line-height: 1.6;
+      padding: 4px 0 4px 16px;
+      position: relative;
+      border-bottom: 1px solid #333;
+    }
+
+    .doc-callout ul li:last-child {
+      border-bottom: none;
+    }
+
+    .doc-callout ul li::before {
+      content: '·';
+      color: #5cb85c;
+      font-size: 20px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      line-height: 1.5;
+    }
+
+    .doc-callout a {
+      color: #5cb85c;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+
+    /* ICF NOTICE BOX */
+    .notice-block {
+      border: 1px solid #e2e8e0;
+      border-radius: 4px;
+      padding: 22px 28px;
+      margin: 24px 0;
+    }
+
+    .notice-block .notice-icon {
+      background-color: #f7f9f5;
+      border: 1px solid #e2e8e0;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .notice-block h4 {
+      font-family: 'Lora', serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .notice-block p {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 10px;
+    }
+
+    .notice-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .notice-block a {
+      color: #3d8b3d;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* STUDY INFO STRIP */
+    .study-strip {
+      background-color: #f7f9f5;
+      border-top: 1px solid #e8ede6;
+      border-bottom: 1px solid #e8ede6;
+      padding: 18px 40px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .study-strip .stat {
+      text-align: center;
+      flex: 1;
+      min-width: 100px;
+    }
+
+    .study-strip .stat-value {
+      font-family: 'Lora', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #3d8b3d;
+      display: block;
+    }
+
+    .study-strip .stat-label {
+      font-size: 11px;
+      color: #888;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* CLOSING */
+    .closing {
+      padding: 0;
+    }
+
+    .closing p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444;
+      margin-bottom: 14px;
+    }
+
+    .closing .sign-off {
+      margin-top: 24px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid #e8ede6;
+      margin: 28px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="email-wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="logo-block">
+        <!-- IIT Logo placeholder — replace src with base64 or hosted URL -->
+        <img src="https://d36urhup7zbd7q.cloudfront.net/e/433f9064-08f1-4d9e-801e-3f51b650a126.jpeg" alt="IIT" width="50" style="display:block;width:50px;height:auto;" />
+        <div class="logo-text">
+          Institute for Integrative Therapies
+          <strong>Eden Prairie, MN</strong>
+        </div>
+      </div>
+      <div class="header-tagline">
+        Clinical Research<br/>VLS-01-203
+      </div>
+    </div>
+
+    <!-- ACCENT BAR -->
+    <div class="accent-bar"></div>
+
+    <!-- HERO -->
+    <div class="hero">
+      <span class="hero-label">Now Enrolling</span>
+      <span class="study-badge">ELUMINA Study</span>
+      <h1>Your Next Steps for the<br/>ataiBeckley ELUMINA Study</h1>
+      <p class="subtitle">VLS-01-203 &nbsp;·&nbsp; DMT for Treatment-Resistant Depression &nbsp;·&nbsp; Paid Research Study</p>
+    </div>
+
+    <!-- STUDY INFO STRIP -->
+    <div class="study-strip">
+      <div class="stat">
+        <span class="stat-value">Paid</span>
+        <span class="stat-label">Participation</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">~6 Mo.</span>
+        <span class="stat-label">Study Duration</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">TRD</span>
+        <span class="stat-label">Indication</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">Phase 2</span>
+        <span class="stat-label">Clinical Trial</span>
+      </div>
+    </div>
+
+    <!-- BODY CONTENT -->
+    <div class="content">
+      <p class="greeting">Dear {{participant_first_name}},</p>
+
+      <p>Thank you for your interest in the <strong>ataiBeckley ELUMINA Study</strong> (Protocol VLS-01-203) at the Institute for Integrative Therapies. We're glad you've taken this step, and our research team is here to make the process as smooth as possible.</p>
+
+      <p>Before your scheduled screening visit, there are a few important items we need you to complete. Please review each step carefully below.</p>
+
+      <hr class="divider" />
+
+      <!-- STEP CARDS -->
+      <div class="steps-block">
+        <h3>Please Complete the Following Prior to Your Screening Visit</h3>
+
+        <!-- STEP 1: ROI -->
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Complete &amp; Return the Release of Information (ROI) Form</h4>
+            <p>The ROI form authorizes IIT to request your relevant medical records from prior treatment providers. This information helps our research physician determine your eligibility for the study. Please complete, sign, and return this form <strong>as soon as possible</strong> — retrieving records can take time, and we want to avoid any delays to your screening visit.</p>
+            <p style="margin-top:8px;">Return completed forms to: <a href="mailto:michael.cimino@iit-mn.com">michael.cimino@iit-mn.com</a></p>
+          </div>
+        </div>
+
+        <!-- STEP 2: HIPAA -->
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Complete &amp; Return the HIPAA Authorization Form</h4>
+            <p>The HIPAA Authorization Form gives IIT and the study sponsor (atai Therapeutics Inc.) permission to use and disclose your protected health information for research purposes, as required by federal law. This form must be signed and returned <strong>before</strong> any study activities can begin.</p>
+            <p style="margin-top:8px;">Return completed forms to: <a href="mailto:michael.cimino@iit-mn.com">michael.cimino@iit-mn.com</a></p>
+          </div>
+        </div>
+
+        <!-- STEP 3: ICF -->
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Review the Informed Consent Form (ICF) Prior to Your Screening Visit</h4>
+            <p>The Informed Consent Form provides a detailed explanation of the study — including its purpose, what participation involves, potential risks and benefits, your rights as a research participant, and confidentiality protections. <strong>You are not required to sign the ICF before your visit</strong>, but we strongly encourage you to read it thoroughly in advance so you feel prepared and can ask our team any questions during your screening appointment.</p>
+            <p style="margin-top:8px;">A copy of the ICF has been attached to this email. You may also <a href="https://www.iit-mn.com/iit-research/atai-elumina-vls-01-203-dmt/">learn more about the study on our website →</a></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- DOCUMENT CALLOUT -->
+      <div class="doc-callout">
+        <span class="doc-label">Forms Checklist</span>
+        <h3>What's Attached to This Email</h3>
+        <p>The following documents are attached for your review and completion:</p>
+        <ul>
+          <li>Release of Information (ROI) Form — please complete, sign, and email back</li>
+          <li>HIPAA Authorization Form — please complete, sign, and email back</li>
+          <li>Informed Consent Form (ICF) — for your review prior to screening</li>
+        </ul>
+        <p>If you have any trouble opening these files or need them resent, please contact our research team directly.</p>
+        <a href="mailto:michael.cimino@iit-mn.com">Contact Research Team → michael.cimino@iit-mn.com</a>
+      </div>
+
+      <!-- WET SIGNATURE NOTICE -->
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px 0;">
+        <tr>
+          <td style="background-color:#fff8e6;border-left:4px solid #e6a817;border-radius:0 4px 4px 0;padding:18px 22px;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td width="28" valign="top" style="padding-right:12px;padding-top:1px;">
+                  <div style="background-color:#e6a817;border-radius:50%;width:24px;height:24px;text-align:center;line-height:24px;">
+                    <span style="color:#ffffff;font-family:Arial,sans-serif;font-size:14px;font-weight:bold;line-height:24px;">!</span>
+                  </div>
+                </td>
+                <td valign="top">
+                  <p style="font-family:Arial,sans-serif;font-size:12px;font-weight:bold;color:#7a4e00;letter-spacing:0.06em;text-transform:uppercase;margin:0 0 6px 0;">Important — Wet Signature Required</p>
+                  <p style="font-family:Arial,sans-serif;font-size:13px;color:#5a3c00;line-height:1.65;margin:0;">All forms must be signed with a <strong>handwritten (wet) signature</strong>. Electronic or typed signatures are not accepted for this study. Please print each form, sign by hand, and return the signed copies to <a href="mailto:michael.cimino@iit-mn.com" style="color:#7a4e00;font-weight:bold;">michael.cimino@iit-mn.com</a> — either as a scan or a clear photo of the signed pages.</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <!-- ICF NOTICE -->
+      <div class="notice-block">
+        <div class="notice-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;fill:#3d8b3d;display:block;">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          </svg>
+        </div>
+        <h4>About the Informed Consent Process</h4>
+        <p>Reviewing the ICF in advance is entirely voluntary but highly recommended. The document is detailed and covers all aspects of the study so you can make a fully informed decision about participation. Our research coordinator will walk through the ICF with you again at your screening visit and answer any questions you may have. <strong>You will have as much time as you need before deciding whether to sign.</strong></p>
+        <p>Participation in this study is voluntary. You may withdraw at any time without penalty or loss of benefits to which you are otherwise entitled.</p>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- CLOSING -->
+      <div class="closing">
+        <p>Your screening visit is currently scheduled for <strong>{{screening_date_time}}</strong> at our clinic located at <strong>9300 Hennepin Town Road, Suite 110, Eden Prairie, MN 55347</strong>. If you need to reschedule or have questions ahead of your visit, please don't hesitate to reach out.</p>
+
+        <p>We appreciate your willingness to participate in this important research and look forward to meeting with you. Our team is here to support you every step of the way.</p>
+
+        <p class="sign-off">Warmly,<br/><strong>The IIT Research Team</strong></p>
+      </div>
+
+    </div><!-- /content -->
+
+    <!-- FOOTER / SIGNATURE -->
+    <div style="padding: 24px 40px 32px; background: #ffffff; border-top: 1px solid #e8ede6;">
+      <table style="direction:ltr;border-collapse:collapse;min-width:100%" cellpadding="0" cellspacing="0"><tr><td><table style="border-collapse:collapse;width:500px;max-width:500px" cellpadding="0" cellspacing="0"><tr><td><table style="border-collapse:collapse;height:1px" cellpadding="0" cellspacing="0"><tr><td style="padding:0.1px;vertical-align:top" valign="top"><table style="border-collapse:collapse;height:1px" cellpadding="0" cellspacing="0"><tr><td style="padding:5px;vertical-align:top" valign="top"><p style="margin:1px;"><a href="https://www.iit-mn.com" target="_blank" rel="nofollow noreferrer"><img src="https://d36urhup7zbd7q.cloudfront.net/e/433f9064-08f1-4d9e-801e-3f51b650a126.jpeg" alt="Photo" width="50" style="display:block;width:50px;" /></a></p></td><td style="padding:0px 5px;vertical-align:top;height:1px" valign="top"><table cellpadding="0" cellspacing="0" style="min-height:198px;"><tr><td style="padding: 0 0 0 5px" /><td style="border-right:1px solid #3b884c;height:198px" /><td style="padding: 0 5px 0 0" /></tr></table></td><td style="padding:0.1px;vertical-align:top" valign="top"><table style="border-collapse:collapse;height:1px" cellpadding="0" cellspacing="0"><tr><td style="padding:0.1px;vertical-align:top" valign="top"><table style="border-collapse:collapse;height:1px" cellpadding="0" cellspacing="0"><tr><td style="padding:5px;vertical-align:top" valign="top"><p style="margin:0.1px;line-height:13px;"><span style="color:#3b884c;font-family:Palatino;font-size:13px;font-weight:bold;letter-spacing:3px;">INFO IIT</span></p></td><td style="padding:5px;vertical-align:top" valign="top"><table cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:1px;line-height:2.5px;"><tr><td colspan="0"><p style="margin:1px;"><a href="https://www.linkedin.com/company/iitmn" target="_blank" rel="nofollow noreferrer"><img src="https://gifo.srv.wisestamp.com/i/linkedin/0077b5/ffffff/20/6/0/bg.png" alt="Linkedin Icon" width="11" height="11" style="color:#ffffff;display:block;width:11px;height:11px;" /></a></p></td></tr></table></td></tr></table></td></tr><tr><td style="padding:4px 0px;vertical-align:top" valign="top"><table cellpadding="0" cellspacing="0" style="width:100%;min-width:100%;"><tr><td style="padding: 5px 0 0 0" /></tr><tr><td style="border-bottom:1px solid #3b884c" /></tr><tr><td style="padding: 0 0 5px 0" /></tr></table></td></tr><tr><td style="padding:0px 1px 1px 0px;vertical-align:top;border-collapse:collapse" valign="top"><table cellpadding="0" cellspacing="0" style="line-height:11px;"><tr><td nowrap style="vertical-align:middle;padding:0 0 0.1px 0"><table cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-family:Arial;"><tr><td style="vertical-align: middle"><p style="margin:1px;"><img src="https://gifo.srv.wisestamp.com/i/ws1gl/EDEEEF/3b884c/36/16/circle/bg.png" alt="Icon" width="25" height="25" style="color:#3b884c;display:block;width:25px;height:25px;" /></p></td><td style="width: 6px" width="6"></td><td nowrap style="vertical-align: middle; padding: 0.1px"><p style="font-family:Arial;margin:0.1px;line-height:11px;"><a href="https://www.iit-mn.com" target="_blank" style="text-decoration: unset" rel="nofollow noreferrer"><span style="color:#000000;font-size:11px;white-space:nowrap;">www.iit-mn.com</span></a></p></td></tr></table></td></tr><tr><td nowrap style="vertical-align:middle;padding:0 0 0.1px 0"><table cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-family:Arial;"><tr><td style="vertical-align: middle"><p style="margin:1px;"><img src="https://gifo.srv.wisestamp.com/i/ws1pl/EDEEEF/3b884c/36/16/circle/bg.png" alt="Icon" width="25" height="25" style="color:#3b884c;display:block;width:25px;height:25px;" /></p></td><td style="width: 6px" width="6"></td><td nowrap style="vertical-align: middle; padding: 0.1px"><p style="font-family:Arial;margin:0.1px;line-height:11px;"><a href="tel:6512808774" target="_blank" style="text-decoration: unset" rel="nofollow noreferrer"><span style="color:#000000;font-size:11px;white-space:nowrap;">651-280-8774</span></a></p></td></tr></table></td></tr><tr><td nowrap style="vertical-align:middle;padding:0 0 0.1px 0"><table cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-family:Arial;"><tr><td style="vertical-align: middle"><p style="margin:1px;"><img src="https://gifo.srv.wisestamp.com/i/ws1el/EDEEEF/3b884c/36/16/circle/bg.png" alt="Icon" width="25" height="25" style="color:#3b884c;display:block;width:25px;height:25px;" /></p></td><td style="width: 6px" width="6"></td><td nowrap style="vertical-align: middle; padding: 0.1px"><p style="font-family:Arial;margin:0.1px;line-height:11px;"><a href="mailto:michael.cimino@iit-mn.com" target="_blank" style="text-decoration: unset" rel="nofollow noreferrer"><span style="color:#000000;font-size:11px;white-space:nowrap;">michael.cimino@iit-mn.com</span></a></p></td></tr></table></td></tr><tr><td nowrap style="vertical-align:middle;padding:0 0 0.1px 0"><table cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-family:Arial;"><tr><td style="vertical-align: middle"><p style="margin:1px;"><img src="https://gifo.srv.wisestamp.com/i/ws1ldl/EDEEEF/3b884c/36/16/circle/bg.png" alt="Icon" width="25" height="25" style="color:#3b884c;display:block;width:25px;height:25px;" /></p></td><td style="width: 6px" width="6"></td><td nowrap style="vertical-align: middle; padding: 0.1px"><p style="font-family:Arial;margin:0.1px;line-height:11px;"><a href="https://maps.google.com/?q=9300 Hennepin Town Road, Suite 110 Eden Prairie, MN 55347" target="_blank" style="text-decoration: unset" rel="nofollow noreferrer"><span style="color:#000000;font-size:11px;white-space:nowrap;">9300 Hennepin Town Road, Suite 110 Eden Prairie, MN 55347</span></a></p></td></tr></table></td></tr><tr><td nowrap style="vertical-align:middle;padding:0 0 0.1px 0"><table cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-family:Arial;"><tr><td style="vertical-align: middle"><p style="margin:1px;"><img src="https://gifo.srv.wisestamp.com/i/ws1fl/EDEEEF/3b884c/36/16/circle/bg.png" alt="Icon" width="25" height="25" style="color:#3b884c;display:block;width:25px;height:25px;" /></p></td><td style="width: 6px" width="6"></td><td nowrap style="vertical-align: middle; padding: 0.1px"><p style="font-family:Arial;margin:0.1px;line-height:11px;"><a href="tel:8444798458" target="_blank" style="text-decoration: unset" rel="nofollow noreferrer"><span style="color:#000000;font-size:11px;white-space:nowrap;">844-479-8458</span></a></p></td></tr></table></td></tr></table></td></tr><tr></tr></table></td></tr></table></td></tr><tr><td style="padding:0.1px;vertical-align:top" valign="top"><table style="border-collapse:collapse;height:1px" cellpadding="0" cellspacing="0"><tr><td style="padding:5px;vertical-align:top;border-top:1px solid #E0E0E0" valign="top"><p style="margin:0.1px;line-height:8px;"><span style="color:#A6A6A6;font-family:Arial;font-size:8px;">HIPAA NOTICE: The Institute for Integrative Therapies (IIT) maintains strict compliance with federal and state privacy laws, including HIPAA. This email and any attachments may contain confidential or privileged information, including protected health information (PHI). It is intended solely for the individual or entity to whom it is addressed. Unauthorized use, disclosure, copying, or distribution is prohibited. If you received this message in error, please notify the sender immediately and delete all copies. IIT appreciates your cooperation in safeguarding sensitive information.</span></p></td></tr></table></td></tr></table></td></tr></table>
+    </div><!-- /footer -->
+
+  </div><!-- /email-wrapper -->
+
+</body>
+</html>
