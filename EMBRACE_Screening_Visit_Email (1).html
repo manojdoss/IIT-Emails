@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EMBRACE Study – Screening Visit Confirmation</title>
+  <style>
+    body {
+      background-color: #f0f0ec;
+      font-family: 'Arial', sans-serif;
+      color: #2c2c2c;
+      margin: 0;
+      padding: 0;
+    }
+
+    .email-wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      width: 100%;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 0;
+    }
+
+    /* HEADER */
+    .header {
+      background-color: #ffffff;
+      padding: 24px 40px 20px;
+      border-bottom: 1px solid #e8ede6;
+    }
+
+    .logo-block {
+      display: inline-block;
+    }
+
+    .logo-text {
+      color: #2c2c2c;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      line-height: 1.5;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .logo-text-sub {
+      font-size: 11px;
+      color: #5cb85c;
+      letter-spacing: 0.12em;
+      margin-top: 2px;
+    }
+
+    .header-tagline {
+      font-size: 11px;
+      color: #7a8c7a;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: right;
+      padding-right: 20px;
+    }
+
+    /* GREEN ACCENT BAR */
+    .accent-bar {
+      height: 4px;
+      background: linear-gradient(90deg, #3b884c 0%, #5cb85c 60%, #a8d5a2 100%);
+    }
+
+    /* HERO */
+    .hero {
+      background-color: #f7faf7;
+      padding: 36px 40px 30px;
+      border-bottom: 1px solid #e8ede6;
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #3b884c;
+      background: #eaf3eb;
+      border: 1px solid #c4dfc8;
+      border-radius: 3px;
+      padding: 3px 10px;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: 26px;
+      font-weight: bold;
+      color: #1a2e1a;
+      line-height: 1.3;
+      margin: 0 0 10px 0;
+      padding: 0;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #7a8c7a;
+      letter-spacing: 0.06em;
+      margin: 0;
+    }
+
+    /* DATE HIGHLIGHT BOX */
+    .date-box {
+      display: inline-block;
+      background: #eaf3eb;
+      border: 1px solid #5cb85c;
+      border-radius: 4px;
+      padding: 8px 18px;
+      margin-top: 16px;
+      font-size: 14px;
+      color: #1a2e1a;
+    }
+
+    .date-box strong {
+      color: #3b884c;
+      font-weight: bold;
+    }
+
+    /* BODY CONTENT */
+    .content {
+      padding: 36px 40px 28px;
+    }
+
+    .content p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #2c2c2c;
+      margin: 0 0 18px 0;
+    }
+
+    /* SECTION HEADING */
+    .section-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: #1a2e1a;
+      border-left: 3px solid #5cb85c;
+      padding-left: 12px;
+      margin: 28px 0 12px 0;
+    }
+
+    /* INFO BLOCKS */
+    .info-block {
+      background: #f7faf7;
+      border: 1px solid #e0ebe0;
+      border-radius: 4px;
+      padding: 18px 22px;
+      margin-bottom: 20px;
+    }
+
+    /* NUMBERED DOCS */
+    .doc-num {
+      width: 28px;
+      height: 28px;
+      background: #3b884c;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 28px;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 16px;
+    }
+
+    .doc-body {
+      display: inline-block;
+      vertical-align: top;
+      width: calc(100% - 60px);
+    }
+
+    .doc-body strong {
+      font-size: 14px;
+      font-weight: bold;
+      color: #1a2e1a;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .doc-body p {
+      font-size: 14px;
+      margin: 0;
+      color: #444;
+    }
+
+    .doc-item {
+      margin-bottom: 20px;
+    }
+
+    /* SUBMISSION OPTIONS */
+    .submission-block {
+      background: #1a2e1a;
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .submission-block h4 {
+      font-size: 15px;
+      color: #a8d5a2;
+      margin: 0 0 14px 0;
+      letter-spacing: 0.04em;
+      font-weight: bold;
+    }
+
+    .submission-row {
+      margin-bottom: 10px;
+    }
+
+    .submission-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .submission-icon {
+      width: 28px;
+      height: 28px;
+      background: #3b884c;
+      border-radius: 50%;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 12px;
+      line-height: 28px;
+      text-align: center;
+    }
+
+    .submission-row p {
+      font-size: 14px;
+      color: #d0e8d0 !important;
+      margin: 0 !important;
+      line-height: 1.5 !important;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .submission-row a {
+      color: #5cb85c;
+      text-decoration: none;
+    }
+
+    /* NOTICE BOX */
+    .notice-box {
+      border: 1px solid #f0c040;
+      background: #fffdf0;
+      border-radius: 4px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+    }
+
+    .notice-box p {
+      font-size: 13px !important;
+      color: #5a4a10 !important;
+      margin: 0 !important;
+    }
+
+    .notice-box strong {
+      color: #3a2e00;
+      font-weight: bold;
+    }
+
+    /* VOLUNTARY NOTE */
+    .voluntary-note {
+      font-size: 13px !important;
+      color: #7a8c7a !important;
+      font-style: italic;
+      border-top: 1px solid #e8ede6;
+      padding-top: 16px;
+      margin-bottom: 0 !important;
+    }
+
+    /* CLOSING */
+    .closing {
+      padding: 0 40px 32px;
+    }
+
+    .closing p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #2c2c2c;
+      margin: 0 0 10px 0;
+    }
+
+    .sign-off {
+      margin-top: 24px !important;
+      color: #1a2e1a !important;
+    }
+
+    /* FOOTER */
+    .footer {
+      padding: 24px 40px 32px;
+      background: #ffffff;
+      border-top: 1px solid #e8ede6;
+      font-size: 12px;
+      color: #7a8c7a;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .email-wrapper {
+        width: 100% !important;
+      }
+      
+      .header, .hero, .content, .closing, .footer {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;background-color:#f0f0ec;">
+
+<div class="email-wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo-block">
+      <div class="logo-text">
+        EMBRACE
+        <div class="logo-text-sub">STUDY</div>
+      </div>
+    </div>
+    <div class="header-tagline">
+      Clinical<br/>Research
+    </div>
+  </div>
+
+  <!-- ACCENT BAR -->
+  <div class="accent-bar"></div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">Cybin EMBRACE Study</div>
+    <h1>Your Screening Visit<br/>is Confirmed</h1>
+    <p class="subtitle">Institute for Integrative Therapies &nbsp;·&nbsp; Eden Prairie, MN</p>
+    <div class="date-box">
+      Scheduled for: <strong>{{Date}}</strong>
+    </div>
+  </div>
+
+  <!-- BODY CONTENT -->
+  <div class="content">
+    <p>Dear {{Name}},</p>
+
+    <p>We are looking forward to meeting with you for your screening visit for the <strong>Cybin EMBRACE study</strong>. We appreciate your interest in this research and are glad to have you moving forward. This email contains important information about what to expect and what you need to do before your visit.</p>
+
+    <!-- PURPOSE -->
+    <h3 class="section-heading">Purpose of the Screening Visit</h3>
+    <p>The primary purpose of this visit is to determine if the EMBRACE study is a safe and appropriate fit for you. During this appointment, the research team will perform a series of evaluations to assess your medical history, current health status, and psychological well-being.</p>
+
+    <!-- DURATION -->
+    <h3 class="section-heading">Anticipated Duration</h3>
+    <div class="info-block">
+      <p>Please plan to be with us for approximately <strong>4 hours</strong>. We want to ensure we have ample time to complete all assessments and thoroughly answer any questions you may have.</p>
+    </div>
+
+    <!-- REQUIRED DOCS -->
+    <h3 class="section-heading">Required Documentation &amp; Submission Instructions</h3>
+    <p>In order to proceed with the visit, we require the following items. Please note that we require <strong>"wet" (ink) signatures</strong> on the ROI and HIPAA forms — electronic signatures cannot be accepted.</p>
+
+    <!-- Notice box -->
+    <div class="notice-box">
+      <p><strong>⚠️ Important:</strong> The ROI and HIPAA Authorization forms require original ink signatures. Please print, sign, and return these documents prior to your visit using one of the submission methods listed below.</p>
+    </div>
+
+    <!-- Doc 1 -->
+    <div class="doc-item">
+      <span class="doc-num">1</span>
+      <div class="doc-body">
+        <strong>Release of Information (ROI)</strong>
+        <p>Please complete the <em>Minnesota Standard Consent Form to Release Health Information</em>. This allows us to request your medical records from outside providers — essential for confirming your eligibility and medical history.</p>
+      </div>
+    </div>
+
+    <!-- Doc 2 -->
+    <div class="doc-item">
+      <span class="doc-num">2</span>
+      <div class="doc-body">
+        <strong>HIPAA Authorization Form</strong>
+        <p>You will need to sign the <em>Institute for Integrative Therapies (IIT) HIPAA Disclosure Form</em>. This document authorizes our team to use and disclose your protected health information (PHI) as needed for the study.</p>
+      </div>
+    </div>
+
+    <!-- Doc 3 -->
+    <div class="doc-item">
+      <span class="doc-num">3</span>
+      <div class="doc-body">
+        <strong>Informed Consent Form (ICF) Review</strong>
+        <p>The full Informed Consent Form is attached to this email. Please review this document in its entirety <em>prior to your visit</em> so that you can highlight any sections you wish to discuss with our team.</p>
+      </div>
+    </div>
+
+    <!-- SUBMISSION -->
+    <h3 class="section-heading">How to Submit Your Forms</h3>
+    <p>Once you have printed and signed the ROI and HIPAA forms, please return them to us via one of the following methods:</p>
+
+    <div class="submission-block">
+      <h4>Return Completed Forms</h4>
+      <div class="submission-row">
+        <svg style="width:14px;height:14px;fill:#fff;display:inline-block;vertical-align:middle;margin-right:8px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+        <p><strong style="color:#a8d5a2;">Email:</strong> Scan and email signed copies to <a href="mailto:michael.cimino@iit-mn.com" style="color:#5cb85c;text-decoration:none;">michael.cimino@iit-mn.com</a></p>
+      </div>
+      <div class="submission-row">
+        <svg style="width:14px;height:14px;fill:#fff;display:inline-block;vertical-align:middle;margin-right:8px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 2H9C7.9 2 7 2.9 7 4v3H5C3.9 7 3 7.9 3 9v13h11v-4h2v4h5V6l-2-4zm-7 18H5V9h7v11zm7 0h-5v-4H9v-4H7V4h8l4 3v13z"/>
+        </svg>
+        <p><strong style="color:#a8d5a2;">Fax:</strong> Send to <a href="tel:+18444798458" style="color:#5cb85c;text-decoration:none;">844-479-8458</a></p>
+      </div>
+    </div>
+
+    <p class="voluntary-note">Your participation is entirely voluntary, and you may choose to withdraw from the screening process at any time without penalty or loss of benefits to which you are otherwise entitled.</p>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <p>We look forward to seeing you soon. Please don't hesitate to reach out if you have any questions in the meantime — our research team is happy to help.</p>
+    <p class="sign-off">
+      Warm regards,<br/>
+      <strong>The Research Team</strong><br/>
+      <span style="font-family:Arial,sans-serif;font-size:13px;color:#3b884c;font-weight:bold;letter-spacing:0.06em;">Institute for Integrative Therapies (IIT)</span>
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p style="margin:0;font-size:12px;color:#7a8c7a;">
+      Institute for Integrative Therapies (IIT)<br/>
+      Eden Prairie, MN<br/>
+      <br/>
+      <em>This is a confidential research communication. If you have questions, please contact our research team.</em>
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
