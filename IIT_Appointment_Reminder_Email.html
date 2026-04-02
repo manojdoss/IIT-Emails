@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Appointment is Tomorrow – IIT</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background-color: #f0f0ec; font-family: 'Source Sans 3', sans-serif; color: #2c2c2c; }
+    .email-wrapper { max-width: 640px; margin: 40px auto; background: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.hero { background-color: #f7f9f5; padding: 32px 40px 28px; border-bottom: 1px solid #e8ede6; }
+    .hero-label { display: inline-block; background-color: #3d8b3d; color: #ffffff; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 12px; border-radius: 2px; margin-bottom: 14px; }
+    .hero h1 { font-family: 'Lora', serif; font-size: 26px; font-weight: 600; color: #1a1a1a; line-height: 1.35; margin-bottom: 6px; }
+    .hero .subtitle { font-size: 14px; color: #777; font-weight: 300; letter-spacing: 0.02em; }
+    .content { padding: 36px 40px; }
+    .greeting { font-family: 'Source Sans 3', sans-serif; font-size: 15px; color: #444; line-height: 1.75; margin-bottom: 16px; }
+    .content p { font-size: 15px; line-height: 1.75; color: #444; margin-bottom: 20px; }
+    .appt-card { background-color: #f7f9f5; border-left: 4px solid #3d8b3d; border-radius: 0 4px 4px 0; padding: 24px 28px; margin: 24px 0; }
+    .appt-card h3 { font-family: 'Lora', serif; font-size: 15px; font-weight: 600; color: #1a1a1a; margin-bottom: 16px; letter-spacing: 0.01em; }
+    .appt-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; font-size: 14px; color: #444; line-height: 1.5; }
+    .appt-row:last-child { margin-bottom: 0; }
+    .appt-icon { color: #3d8b3d; font-size: 15px; min-width: 18px; margin-top: 1px; }
+    .appt-label { font-weight: 600; color: #1a1a1a; min-width: 80px; }
+    .checklist-block { background-color: #ffffff; border: 1px solid #e8ede6; border-radius: 4px; padding: 22px 28px; margin: 24px 0; }
+    .checklist-block h3 { font-family: 'Lora', serif; font-size: 15px; font-weight: 600; color: #1a1a1a; margin-bottom: 14px; }
+    .checklist-block ul { list-style: none; padding: 0; }
+    .checklist-block ul li { font-size: 14px; color: #444; padding: 6px 0 6px 22px; position: relative; line-height: 1.5; border-bottom: 1px solid #f0f0ec; }
+    .checklist-block ul li:last-child { border-bottom: none; }
+    .checklist-block ul li::before { content: "✓"; color: #3d8b3d; font-weight: 700; font-size: 13px; position: absolute; left: 0; top: 6px; }
+    .questions-block { background-color: #1a1a1a; border-radius: 4px; padding: 22px 28px; margin: 24px 0; }
+    .questions-block p { color: #cccccc; font-size: 14px; line-height: 1.65; margin-bottom: 0; }
+    .questions-block a { color: #5cb85c; text-decoration: none; font-weight: 600; }
+    .questions-block strong { color: #ffffff; }
+    .cta-block { margin: 28px 0; text-align: center; }
+    .cta-button { display: inline-block; background-color: #3d8b3d; color: #ffffff !important; text-decoration: none; font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 32px; border-radius: 3px; }
+    .closing { margin-top: 28px; }
+    .closing p { font-size: 15px; line-height: 1.75; color: #444; margin-bottom: 14px; }
+    .sign-off { margin-top: 8px; font-size: 15px; color: #444; }
+    .footer { padding: 24px 40px 28px; background: #ffffff; border-top: 1px solid #e8ede6; }
+    .footer-info { font-family: Arial, sans-serif; font-size: 11px; color: #555; line-height: 1.7; }
+    .footer-info a { color: #3d8b3d; text-decoration: none; }
+    .footer-divider { border: none; border-top: 1px solid #e8ede6; margin: 16px 0; }
+    .hipaa-notice { font-family: Arial, sans-serif; font-size: 8px; color: #A6A6A6; line-height: 1.5; margin-top: 12px; }
+  </style>
+</head>
+<body>
+<div class="email-wrapper">
+<!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">Appointment Reminder</div>
+    <h1>Your visit is tomorrow</h1>
+    <div class="subtitle">Please plan for a 3–4 hour visit</div>
+  </div>
+
+  <!-- BODY CONTENT -->
+  <div class="content">
+
+    <p class="greeting">Dear {{first_name}},</p>
+
+    <p>This is a friendly reminder that you have an upcoming appointment at the Institute for Integrative Therapies tomorrow. We want to make sure everything goes smoothly for your visit.</p>
+
+    <!-- APPOINTMENT DETAILS CARD -->
+    <div class="appt-card">
+      <h3>Your Appointment Details</h3>
+
+      <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;">
+        <tr>
+          <td style="padding:6px 0;vertical-align:top;width:22px;">
+            <span style="color:#3d8b3d;font-size:15px;">📅</span>
+          </td>
+          <td style="padding:6px 8px 6px 0;vertical-align:top;width:90px;">
+            <span style="font-weight:600;color:#1a1a1a;font-size:14px;font-family:'Source Sans 3',sans-serif;">Date</span>
+          </td>
+          <td style="padding:6px 0;vertical-align:top;">
+            <span style="font-size:14px;color:#444;font-family:'Source Sans 3',sans-serif;">{{appointment_date}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:6px 0;vertical-align:top;">
+            <span style="color:#3d8b3d;font-size:15px;">⏰</span>
+          </td>
+          <td style="padding:6px 8px 6px 0;vertical-align:top;">
+            <span style="font-weight:600;color:#1a1a1a;font-size:14px;font-family:'Source Sans 3',sans-serif;">Time</span>
+          </td>
+          <td style="padding:6px 0;vertical-align:top;">
+            <span style="font-size:14px;color:#444;font-family:'Source Sans 3',sans-serif;">{{appointment_time}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:6px 0;vertical-align:top;">
+            <span style="color:#3d8b3d;font-size:15px;">🏥</span>
+          </td>
+          <td style="padding:6px 8px 6px 0;vertical-align:top;">
+            <span style="font-weight:600;color:#1a1a1a;font-size:14px;font-family:'Source Sans 3',sans-serif;">Type</span>
+          </td>
+          <td style="padding:6px 0;vertical-align:top;">
+            <span style="font-size:14px;color:#444;font-family:'Source Sans 3',sans-serif;">Screening Visit (approximately 3–4 hours)</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:6px 0;vertical-align:top;">
+            <span style="color:#3d8b3d;font-size:15px;">📍</span>
+          </td>
+          <td style="padding:6px 8px 6px 0;vertical-align:top;">
+            <span style="font-weight:600;color:#1a1a1a;font-size:14px;font-family:'Source Sans 3',sans-serif;">Location</span>
+          </td>
+          <td style="padding:6px 0;vertical-align:top;">
+            <span style="font-size:14px;color:#444;font-family:'Source Sans 3',sans-serif;">9300 Hennepin Town Road, Suite 110<br/>Eden Prairie, MN 55347</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- WHAT TO BRING / PREPARE -->
+    <div class="checklist-block">
+      <h3>Please Remember to Bring</h3>
+      <ul>
+        <li>A valid photo ID (driver's license or government-issued ID)</li>
+        <li>A list of current medications and dosages</li>
+        <li>Any completed intake forms, if you haven't already submitted them</li>
+        <li><strong>If you have been instructed to washout of any medications</strong>, please have the date of your last expected dose ready to share with our team</li>
+      </ul>
+    </div>
+
+    <!-- CONFIRM APPOINTMENT BUTTON -->
+    <div class="cta-block">
+      <a href="mailto:michael.cimino@iit-mn.com?subject=Appointment%20Confirmation%20%E2%80%93%20{{appointment_date}}&body=Dear%20IIT%20Care%20Team%2C%0A%0AI%20am%20writing%20to%20confirm%20my%20appointment%20on%20{{appointment_date}}%20at%20{{appointment_time}}.%0A%0AI%20will%20be%20there%20and%20will%20plan%20to%20arrive%2010%E2%80%9315%20minutes%20early.%0A%0AThank%20you%2C%0A{{first_name}}" class="cta-button">Confirm Appointment</a>
+    </div>
+
+    <p>Please plan to arrive <strong>10–15 minutes early</strong> to allow time for check-in. Your screening visit will take approximately <strong>3–4 hours</strong>, so we recommend clearing your schedule for the morning or afternoon. Free parking is available on-site.</p>
+
+    <!-- QUESTIONS / CONTACT BLOCK -->
+    <div class="questions-block">
+      <p><strong>Need to reschedule or have questions?</strong><br/>
+      Please contact us as soon as possible so we can accommodate you. You can reach our team by phone at <a href="tel:6512808774">651-280-8774</a> or by email at <a href="mailto:info@iit-mn.com" style="color:#5cb85c;text-decoration:none;font-weight:600;">info@iit-mn.com</a>.</p>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="closing">
+      <p>We look forward to seeing you tomorrow and supporting you on your care journey.</p>
+      <p class="sign-off">Warmly,<br/><strong>The IIT Care Team</strong><br/>
+      <span style="font-size:13px;color:#777;">Institute for Integrative Therapies</span></p>
+    </div>
+
+  </div><!-- end .content -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;width:100%;">
+      <tr>
+        <td style="vertical-align:top;padding-right:20px;border-right:2px solid #3d8b3d;width:50%;">
+          <p style="font-family:Arial,sans-serif;font-size:12px;font-weight:700;color:#3d8b3d;letter-spacing:0.08em;margin-bottom:8px;">INSTITUTE FOR INTEGRATIVE THERAPIES</p>
+          <p style="font-family:Arial,sans-serif;font-size:11px;color:#555;line-height:1.7;margin:0;">
+            9300 Hennepin Town Road, Suite 110<br/>
+            Eden Prairie, MN 55347<br/>
+            <a href="tel:6512808774" style="color:#3d8b3d;text-decoration:none;">651-280-8774</a><br/>
+            <a href="mailto:info@iit-mn.com" style="color:#5cb85c;text-decoration:none;font-weight:600;">info@iit-mn.com</a><br/>
+            <a href="https://www.iit-mn.com" style="color:#3d8b3d;text-decoration:none;">www.iit-mn.com</a>
+          </p>
+        </td>
+        <td style="vertical-align:top;padding-left:20px;width:50%;">
+          <p style="font-family:Arial,sans-serif;font-size:11px;color:#555;line-height:1.7;margin:0;">
+            <strong style="color:#1a1a1a;">Clinic Hours</strong><br/>
+            Monday – Friday: 8:00 AM – 5:00 PM<br/>
+            <br/>
+            <strong style="color:#1a1a1a;">After Hours / Urgent:</strong><br/>
+            Please call <a href="tel:6512808774" style="color:#3d8b3d;text-decoration:none;">651-280-8774</a>
+          </p>
+        </td>
+      </tr>
+    </table>
+
+    <hr style="border:none;border-top:1px solid #e8ede6;margin:16px 0;" />
+
+    <p style="font-family:Arial,sans-serif;font-size:8px;color:#A6A6A6;line-height:1.5;margin:0;">
+      HIPAA NOTICE: The Institute for Integrative Therapies (IIT) maintains strict compliance with federal and state privacy laws, including HIPAA. This email and any attachments may contain confidential or privileged information, including protected health information (PHI). It is intended solely for the individual or entity to whom it is addressed. Unauthorized use, disclosure, copying, or distribution is prohibited. If you received this message in error, please notify the sender immediately and delete all copies. IIT appreciates your cooperation in safeguarding sensitive information.
+    </p>
+
+  </div>
+
+</div>
+</body>
+</html>
